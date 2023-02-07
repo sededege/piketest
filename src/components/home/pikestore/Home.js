@@ -79,10 +79,10 @@ const Home = () => {
 
   console.log(categories);
   return (
-    <div className="flex flex-col px-20 mb-10 ">
+    <div className="flex flex-col px-20 ">
       <Slider />
 
-      <div className="flex w-full items-center bg-pike2 rounded-t-lg justify-between mt-10">
+      <div className="flex w-full items-center bg-pike2 rounded-t-lg justify-between mt-4">
         <div className="flex p-4 box-border box-none font-bold text-white">
           Filtros
         </div>

@@ -1,26 +1,80 @@
 import React from "react";
 import logo from "./assets/logo.jpg";
-import { AiOutlineInfoCircle, AiOutlineWhatsApp } from "react-icons/ai";
+import {
+  AiOutlineInfoCircle,
+  AiFillLinkedin,
+  AiOutlineInstagram,
+  AiOutlineWhatsApp,
+  AiOutlineMail,
+  AiOutlineSearch,
+
+} from "react-icons/ai";
+import {BiMailSend} from 'react-icons/bi'
 
 const Footer = () => {
   return (
-    <nav className="w-full flex justify-between items-center px-20 bg-pike2 p-2">
-      <div className="flex gap-4">
-        <div className="flex items-center">
+    <nav className="w-full flex justify-between items-center px-20 bg-pike2 p-2 py-10">
+     {/*  <div className="flex gap-4">
+         <div className="flex items-center">
           <AiOutlineInfoCircle className="text-pike" />
-          <p className="text-white ml-2">Retiros en Zona Reducto - Parque Posadas</p>
+          <p className="text-white ml-2">
+            Retiros en Zona Reducto - Parque Posadas
+          </p>
+        </div> 
+       
+      </div> */}
+      <ul className="text-white flex flex-col gap-2">
+        <h1 className="font-bold ">Newsletter</h1>
+        <li className="hover:underline cursor-pointer">Suscribite y recibí todas nuestras novedades!</li>
+        <li className="hover:underline cursor-pointer">
+        <div className="flex ">
+          <input
+            className="w-full p-2 bg-white rounded-l-md text-center shadow-md"
+            type="text"
+            placeholder="Escribe tu email"
+          />
+          <BiMailSend className="bg-pike text-[2.5rem] p-1 text-white rounded-r-md cursor-pointer" />
         </div>
-      {/*   <div className="flex items-center">
-        <AiOutlineWhatsApp className="text-pike" />
-        <p className="text-white ml-2">Horarios de lun a vier de 8 am a 12 pm</p>
-        </div> */}
-
-      </div>
-      <ul className="flex flex-col gap-2 text-right text-pike cursor-pointer">
-        <li>Inicio</li>
-        <li>Sobre nosotros</li>
-        <li>Contacto</li>
+        </li>
+        <li></li>
       </ul>
+      <ul className="text-white flex flex-col gap-4">
+        <h1 className="font-bold ">Retiros</h1>
+        <li>Zona Reducto</li>
+        <li>Parque Posadas</li>
+        <li></li>
+      </ul>
+      <ul className="text-white flex flex-col gap-2">
+        <h1 className="font-bold ">Compra</h1>
+        <li className="hover:underline cursor-pointer">
+          Como comprar en nuestra web
+        </li>
+        <li className="hover:underline cursor-pointer">
+          Envíos y devoluciones
+        </li>
+        <li className="hover:underline cursor-pointer">Preguntas frecuentes</li>
+      </ul>
+      <div className="flex flex-col gap-4 bottom-6 relative">
+        <p className="text-white font-bold">Seguinos</p>
+        <div className="flex gap-4 text-pike">
+          <a href="https://www.linkedin.com/in/sebagtech/">
+            {" "}
+            <AiFillLinkedin className="text-[2rem] " />
+          </a>
+          <a href="http://sebag.tech">
+            {" "}
+            <AiOutlineInstagram className="text-[2rem]" />
+          </a>
+          <a href="https://wa.me/+59898412760">
+            {" "}
+            <AiOutlineWhatsApp className="text-[2rem]" />
+          </a>
+          <a href="mailto:sebagonzalez_97@hotmail.com">
+            {" "}
+            <AiOutlineMail className="text-[2rem]" />
+          </a>
+        </div>
+      </div>
     </nav>
   );
 };
