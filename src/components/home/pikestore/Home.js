@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Products from "./Products";
 import Slider from "./Slider";
+import Range from './Range'
 import Pagination from "./Pagination";
 import { IoIosConstruct } from "react-icons/io";
 import { AiFillHome, AiOutlineSearch } from "react-icons/ai";
@@ -61,9 +62,7 @@ const Home = () => {
   };
 
   const cambiar = (props) => {
-    console.log(props);
     setSelect(props.name);
-    console.log(products);
     fetch(
       `https://api.mercadolibre.com/sites/MLU/search?seller_id=109907868&category=${props.id}`
     )
@@ -73,18 +72,17 @@ const Home = () => {
           type: actionType.SET_PRODUCTS,
           products: data.results,
         });
-        setCategories(data.available_filters[0].values);
-      });
+/*         setCategories(data.available_filters[0].values);
+ */      });
   };
 
-  console.log(categories);
   return (
     <div className="flex flex-col px-20 ">
       <Slider />
 
       <div className="flex w-full items-center bg-pike2 rounded-t-lg justify-between mt-4">
         <div className="flex p-4 box-border box-none font-bold text-white">
-          Filtros
+         Catálogo
         </div>
         <div className="flex p-4 ">
           <input
@@ -115,19 +113,25 @@ const Home = () => {
       <div className="flex h-full">
         <div className="w-1/4  rounded-bl-lg">
           <h2 className="font-bold mt-4 text-left px-4">Categorias</h2>
-          <ul>
+          <ul className="px-2">
+          <li
+                onClick={() => cambiar('todos')}
+                className={`${
+                  select === 'todos' ? "bg-yellow-400" : "bg-white"
+                } : px-4 py-2 text-gray-500 text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer`}
+                /* className="px-4 py-2 text-gray-500 text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer" */>Todas las categorias</li>
             {categories &&
               categories.map((a) => (
-                <li className="px-4 py-2 text-gray-500 text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer">{iconos(a.name)} {a.name} </li>
+                <li
+                onClick={() => cambiar(a)}
+                className={`${
+                  select === a.name ? "bg-yellow-200 text-pike2" : "bg-white text-gray-500"
+                } : px-4 py-2 rounded-lg   text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer`}
+                /* className="px-4 py-2 text-gray-500 text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer" */>{iconos(a.name)} {a.name} </li>
               ))}
           </ul>
           <h2 className="font-bold mt-4 text-left px-4">Precio</h2>
-          <ul>
-            {price &&
-              price.map((a) => (
-                <li className="px-4 py-2 text-pike2 text-left">{a.name}</li>
-              ))}
-          </ul>
+         <Range/>
         </div>
         <Products products={currentPosts} />
       </div>

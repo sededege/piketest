@@ -54,7 +54,7 @@ const Header = () => {
       <div className="flex gap-4 mr-6">
         <ul className="flex gap-4 text-right text-pike2 cursor-pointer">
           <li className="text-pike">Inicio</li>
-          <li>Catalogo</li>
+          <li>Catálogo</li>
           <li>Sobre nosotros</li>
           <li>Contacto</li>
         </ul>
