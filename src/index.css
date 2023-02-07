@@ -103,7 +103,10 @@ body {
 display:none
 } */
 
-
+.control-dots .dot {
+  margin-bottom: 20px !important;
+  background-color: black !important
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

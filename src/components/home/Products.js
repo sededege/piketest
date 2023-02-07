@@ -54,7 +54,7 @@ const Products = (props) => {
 
 /*     console.log(products)
  */    return (
-        <div className=' grid grid-cols-2 md:grid-cols-5  gap-5'>
+        <div className=' grid grid-cols-2 md:grid-cols-5  gap-4'>
             {
                 products && products.length > 0 && (
                    props.products.map((a, index) => (

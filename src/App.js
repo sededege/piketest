@@ -20,13 +20,13 @@ import Ordenes from "./components/producto/Ordenes";
 import Pre from "./components/utils/Pre";
 import ScrollToTop from "./components/utils/scrolltotop";
 import ShowLogin from "./components/home/login";
-import Footer from "./components/home/Footer";
 import Pedidos from "./components/dashboard/Pedidos";
 import Usuarios from "./components/dashboard/Usuarios";
 import Home from "./components/home/pikestore/Home";
-import Headerup from "./components/home/pikestore/Headerup";
 import Header from "./components/home/pikestore/Header";
 import Detalle from "./components/home/pikestore/Detalle";
+import Headerup2 from "./components/home/pikestore/Headerup2";
+import Footer from "./components/home/pikestore/Footer";
 
 function App() {
   const [
@@ -96,6 +96,7 @@ function App() {
 
   const location = useLocation();
 
+
   useEffect(
     () => {
       setTimeout(() => {
@@ -103,11 +104,10 @@ function App() {
       }, 1000);
 
       fetchData();
+     
       /*   fetchUsers(); */
     },
-    [
-      /* fetchUsers */
-    ]
+    [ ]
   );
 
   return (
@@ -126,8 +126,8 @@ function App() {
         {/*         <ScrollToTop />
          */}
          <AnimatePresence>{cartShow && <CartContainer />}</AnimatePresence>
+         <Headerup2/>
          <Header/>
-         <Headerup/>
         <Routes location={location} key={location.pathname}>
           <Route path="/*" element={<Home />} />
           <Route path="/detalle/:productId" element={<Detalle />} />
@@ -143,6 +143,7 @@ function App() {
           <Route path="/Dashboard/Pedidos" element={<Pedidos />} />
           <Route path="/Dashboard/Usuarios" element={<Usuarios />} /> */}
         </Routes>
+        <Footer/>
       </main>
     </div>
   );

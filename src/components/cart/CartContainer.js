@@ -139,7 +139,7 @@ const CartContainer = () => {
                /*  onClick={() => checkout()} */
                 whileTap={{ scale: 0.8 }}
                 type="button"
-                className="w-full p-2 rounded-full bg-gradient-to-tr from-green-400 to-green-600 text-gray-50 text-lg my-2 hover:shadow-lg"
+                className="w-full p-2 rounded-full bg-gradient-to-tr bg-pike text-gray-50 text-lg my-2 hover:shadow-lg"
               >
                 Check Out
               </motion.button>

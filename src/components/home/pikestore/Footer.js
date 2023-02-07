@@ -4,7 +4,7 @@ import { AiOutlineInfoCircle, AiOutlineWhatsApp } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <nav className="w-full flex justify-between items-center px-40 bg-pike2 p-2">
+    <nav className="w-full flex justify-between items-center px-20 bg-pike2 p-2">
       <div className="flex gap-4">
         <div className="flex items-center">
           <AiOutlineInfoCircle className="text-pike" />
@@ -16,7 +16,7 @@ const Footer = () => {
         </div> */}
 
       </div>
-      <ul className="flex flex-col text-right text-pike cursor-pointer">
+      <ul className="flex flex-col gap-2 text-right text-pike cursor-pointer">
         <li>Inicio</li>
         <li>Sobre nosotros</li>
         <li>Contacto</li>

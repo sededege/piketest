@@ -31,7 +31,7 @@ const CartItem = ({ item, setFlag, flag }) => {
     } else {
       // initial state value is one so you need to check if 1 then remove it
       if (qty == 1) {
-        items = cartItems.filter((item) => item[0].item.id !== id);
+        items = cartItems.filter((item) => item[0].item.id != id);
         setFlag(flag + 1);
         cartDispatch();
       } else {
@@ -66,7 +66,7 @@ const CartItem = ({ item, setFlag, flag }) => {
         </p>
         <div className="flex flex-col">
           <p className="text-[0.8rem] font-semibold">
-            Producto: <span>{item[0].item.title}</span>
+         <span>{item[0].item.title}</span>
           </p>
          {/*  <p className="text-[0.8rem] font-semibold">
             Color: <span>{item[0].colorselected}</span>
