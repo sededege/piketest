@@ -115,8 +115,8 @@ React.useEffect(() => {
         />
         <AiOutlineSearch className="bg-pike2 text-[2.5rem] p-1 text-white rounded-r-md cursor-pointer" />
       </div> */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-10 ">
-        {products &&
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {products && products.length > 0 ? (
           products.map((a, index) => (
             <div
               className="px-5 py-4 hover:shadow-lg transition-all 1s ease-in rounded-lg cursor-pointer bg-white "
@@ -147,7 +147,12 @@ React.useEffect(() => {
                 </motion.div>
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <div>
+            <p className=" text-center w-full items-center justify-center">No hay productos :(</p>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ export default function MinimumDistanceSlider({categorias, data}) {
   };
 
   return (
-    <Box className="p-4 ">
+    <Box className="p-6 ">
       <Slider
         getAriaLabel={() => "Minimum distance"}
         value={value1}
@@ -62,7 +62,7 @@ export default function MinimumDistanceSlider({categorias, data}) {
         getAriaValueText={valuetext}
         disableSwap
         min={10}
-        max={3000}
+        max={5000}
       />
       <div className="flex justify-between">
         <p>{value1[0]}</p>

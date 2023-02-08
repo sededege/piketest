@@ -38,12 +38,15 @@ const Slider = () => {
           );
         }}
       >
-        <div className="h-[120px] md:h-full rounded-lg mb-4 hover:opacity-70  cursor-pointer relative">
-          <img src={banner1} className=" rounded-lg object-contain"/>
+        <div className=" md:h-full rounded-lg mb-4 hover:opacity-70  cursor-pointer relative">
+          <img src='https://images.sodimac.com/v3/assets/blt859cb831115f9ca8/blt33da8ac205c6242a/63dd19b4260a9a2054c6cd3c/Vhome-tiramoscasa-1.webp?auto=webp&disable=upscale&quality=70&width=1920' className=" rounded-lg object-contain"/>
         </div>
-        <div className="h-[120px] md:h-full rounded-lg mb-4 hover:opacity-70  cursor-pointer relative">
+        <div className=" md:h-full rounded-lg mb-4 hover:opacity-70  cursor-pointer relative">
+          <img src='https://images.sodimac.com/v3/assets/blt859cb831115f9ca8/blt33da8ac205c6242a/63dd19b4260a9a2054c6cd3c/Vhome-tiramoscasa-1.webp?auto=webp&disable=upscale&quality=70&width=1920' className=" rounded-lg object-contain"/>
+        </div>
+       {/*  <div className="h-[120px] md:h-full rounded-lg mb-4 hover:opacity-70  cursor-pointer relative">
           <img src={banner1} className=" w-1/2 rounded-lg object-cover"/>
-        </div>
+        </div> */}
        
       </Carousel>
     </>
