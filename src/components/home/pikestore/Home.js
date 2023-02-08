@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import Products from "./Products";
 import Slider from "./Slider";
-import Range from './Range'
+import Range from "./Range";
 import Pagination from "./Pagination";
 import { IoIosConstruct } from "react-icons/io";
-import { AiFillHome, AiOutlineSearch } from "react-icons/ai";
+import { AiFillHome, AiOutlineSearch, AiOutlineFilter } from "react-icons/ai";
 import { GiFactory, GiClothes, GiCoinsPile } from "react-icons/gi";
 import { BsFillMusicPlayerFill } from "react-icons/bs";
 import { FaBaby } from "react-icons/fa";
 import { useStateValue } from "../../context/StateProvider";
 import { actionType } from "../../context/reducer";
+import { useLocation } from "react-router";
 
 const Home = () => {
   /*   const [products, setProducts] = React.useState();
    */
   const [{ products }, dispatch] = useStateValue();
   const [categories, setCategories] = React.useState();
+  const [categories2, setCategories2] = React.useState();
   const [price, setPrice] = React.useState();
   const [select, setSelect] = React.useState();
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,9 +26,12 @@ const Home = () => {
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts =
     products && products.slice(firstPostIndex, lastPostIndex);
+  const location = useLocation();
+  const state  = location.state;
+ 
 
-   
   React.useEffect(() => {
+
     fetch("https://api.mercadolibre.com/sites/MLU/search?seller_id=109907868")
       .then((response) => response.json())
       .then((data) => {
@@ -38,7 +43,23 @@ const Home = () => {
           products: data.results,
         });
       });
-  }, []);
+
+      if (state === 'catalogo'){
+        const offsetPosition = 630;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      } else if (state === 'inicio'){
+        const offsetPosition = 0;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+
+      setSelect('todos')
+  }, [state]);
 
   const iconos = (e) => {
     if (e === "Industrias y Oficinas") {
@@ -62,27 +83,33 @@ const Home = () => {
   };
 
   const cambiar = (props) => {
-    setSelect(props.name);
+    if (props === 'todos'){
+      setSelect('todos');
+
+    } else {
+      setSelect(props.name);
+    }
     fetch(
       `https://api.mercadolibre.com/sites/MLU/search?seller_id=109907868&category=${props.id}`
     )
       .then((response) => response.json())
       .then((data) => {
+        setCategories2(data.results)
         dispatch({
           type: actionType.SET_PRODUCTS,
           products: data.results,
         });
-/*         setCategories(data.available_filters[0].values);
- */      });
+       
+      });
   };
 
   return (
-    <div className="flex flex-col px-20 ">
+    <div className="flex flex-col px-10 ">
       <Slider />
 
       <div className="flex w-full items-center bg-pike2 rounded-t-lg justify-between mt-4">
         <div className="flex p-4 box-border box-none font-bold text-white">
-         Catálogo
+          Catálogo
         </div>
         <div className="flex p-4 ">
           <input
@@ -92,7 +119,6 @@ const Home = () => {
           />
           <AiOutlineSearch className="bg-pike2 text-[2.5rem] p-1 text-white rounded-r-md cursor-pointer" />
         </div>
-       
       </div>
       <div>
         {/*  <ul className="flex gap-4 ">
@@ -110,28 +136,37 @@ const Home = () => {
             ))}
         </ul> */}
       </div>
-      <div className="flex h-full">
+      <div className="flex h-full bg-gray-200">
         <div className="w-1/4  rounded-bl-lg">
           <h2 className="font-bold mt-4 text-left px-4">Categorias</h2>
-          <ul className="px-2">
-          <li
-                onClick={() => cambiar('todos')}
-                className={`${
-                  select === 'todos' ? "bg-yellow-400" : "bg-white"
-                } : px-4 py-2 text-gray-500 text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer`}
-                /* className="px-4 py-2 text-gray-500 text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer" */>Todas las categorias</li>
+          <ul className="px-2 gap-2 flex flex-col">
+            <li
+              onClick={() => cambiar("todos")}
+              className={`${
+                select === "todos"
+                  ? "bg-pike text-white"
+                  : "bg-gray-200 text-gray-500"
+              } : px-4 py-2 rounded-lg   text-left flex items-center gap-2 hover:text-white hover:bg-pike cursor-pointer`}
+            >
+             <AiOutlineFilter/> Todas las categorias
+            </li>
             {categories &&
               categories.map((a) => (
                 <li
-                onClick={() => cambiar(a)}
-                className={`${
-                  select === a.name ? "bg-yellow-200 text-pike2" : "bg-white text-gray-500"
-                } : px-4 py-2 rounded-lg   text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer`}
-                /* className="px-4 py-2 text-gray-500 text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer" */>{iconos(a.name)} {a.name} </li>
+                  onClick={() => cambiar(a)}
+                  className={`${
+                    select === a.name
+                      ? "bg-pike text-white"
+                      : "bg-gray-200 text-gray-500"
+                  } : px-4 py-2 rounded-lg   text-left flex items-center gap-2 hover:text-white hover:bg-pike cursor-pointer`}
+                  /* className="px-4 py-2 text-gray-500 text-left flex items-center gap-2 hover:text-black hover:bg-yellow-200 cursor-pointer" */
+                >
+                  {iconos(a.name)} {a.name}{" "}
+                </li>
               ))}
           </ul>
           <h2 className="font-bold mt-4 text-left px-4">Precio</h2>
-         <Range/>
+          <Range categorias={select} data={categories2}/>
         </div>
         <Products products={currentPosts} />
       </div>

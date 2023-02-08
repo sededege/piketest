@@ -27,6 +27,8 @@ import Header from "./components/home/pikestore/Header";
 import Detalle from "./components/home/pikestore/Detalle";
 import Headerup2 from "./components/home/pikestore/Headerup2";
 import Footer from "./components/home/pikestore/Footer";
+import Contact from "./components/home/pikestore/Contact";
+import About from "./components/home/pikestore/About";
 
 function App() {
   const [
@@ -131,6 +133,8 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/*" element={<Home />} />
           <Route path="/detalle/:productId" element={<Detalle />} />
+          <Route path="/SobreNosotros" element={<About/>} />
+          <Route path="/Contacto" element={<Contact />} />
 {/*           <Route path="/carrito" element={<CartContainer />} />
  */}
           {/*    <Route path="/*" element={<MainContainer />} />

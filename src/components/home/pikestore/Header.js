@@ -7,7 +7,7 @@ import { actionType } from "../../context/reducer";
 
 const Header = () => {
   const [{ cartItems, cartShow }, dispatch] = useStateValue();
-
+  const [menu, setMenu] = React.useState("");
   const navigate = useNavigate();
   const showCart = () => {
     dispatch({
@@ -26,6 +26,24 @@ const Header = () => {
     [scroll]
   );
 
+  const menunav = [
+    {
+      id: 0,
+      name: "Inicio",
+    },
+    {
+      id: 1,
+      name: "Catálogo",
+    },
+    {
+      id: 2,
+      name: "Sobre Nosotros",
+    },
+    {
+      id: 3,
+      name: "Contacto",
+    },
+  ];
   React.useEffect(() => {
     setY(window.scrollY);
     window.addEventListener("scroll", handleNavigation);
@@ -35,13 +53,32 @@ const Header = () => {
     };
   }, [handleNavigation]);
 
+  const scrollTo = () => {
+  };
+
+  const navegar = (a) => {
+    setMenu(a);
+
+    if (a === "Inicio") {
+      navigate("/", { state: "inicio" });
+    } 
+    if (a === 'Catálogo') {
+      navigate("/", { state: "catalogo" });
+    } 
+    if (a === 'Sobre Nosotros') {
+      navigate("/SobreNosotros");
+    } 
+    if (a === 'Contacto') {
+      navigate("/Contacto");
+    } 
+  };
   return (
     <nav
       className={`${
         scroll > 10
           ? "top-0  border-b-4 border-pike fixed "
           : "top-10 absolute "
-      } : w-full flex z-[100] bg-white justify-between items-center px-20 h-16 transition-all ease-in 2s`}
+      } : w-full flex z-[100] bg-white justify-between items-center px-10 h-16 transition-all ease-in 2s`}
     >
       {/*       <img src={logo} alt="logo" className="flex w-20" />
        */}{" "}
@@ -53,10 +90,18 @@ const Header = () => {
       </p>
       <div className="flex gap-4 mr-6">
         <ul className="flex gap-4 text-right text-pike2 cursor-pointer">
-          <li className="text-pike">Inicio</li>
-          <li>Catálogo</li>
-          <li>Sobre nosotros</li>
-          <li>Contacto</li>
+          {menunav.map((a) => (
+            <li
+              onClick={() => navegar(a.name)}
+              className={`${menu === a.name ? "text-pike" : "text-pike2"} `}
+            >
+              {a.name}
+            </li>
+          ))}
+
+          {/*  <li onClick={() => scrollTo()}>Catálogo</li>
+          <li onClick={() => navigate("/SobreNosotros")}>Sobre nosotros</li>
+          <li onClick={() => navigate("/Contacto")}>Contacto</li> */}
         </ul>
         <div
           onClick={() => showCart()}

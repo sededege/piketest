@@ -13,7 +13,7 @@ import {BiMailSend} from 'react-icons/bi'
 
 const Footer = () => {
   return (
-    <nav className="w-full flex justify-between items-center px-20 bg-pike2 p-2 py-10">
+    <nav className="w-full flex justify-between items-center px-10 bg-pike2 p-2 py-10">
      {/*  <div className="flex gap-4">
          <div className="flex items-center">
           <AiOutlineInfoCircle className="text-pike" />

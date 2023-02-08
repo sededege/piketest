@@ -4,20 +4,25 @@ import Slider from "@mui/material/Slider";
 import { useStateValue } from "../../context/StateProvider";
 import { actionType } from "../../context/reducer";
 
-function valuetext(value: number) {
+function valuetext(value) {
   return `${value}°C`;
 }
 
 const minDistance = 10;
 
-export default function MinimumDistanceSlider() {
+export default function MinimumDistanceSlider({categorias, data}) {
   const [value1, setValue1] = React.useState([100, 5000]);
   const [{ products }, dispatch] = useStateValue();
   const [products2, setProducts2] = React.useState();
 
+
   React.useEffect(() => {
-       fetchData()
-  }, []);
+    if (categorias === 'todos'){
+        fetchData()
+    } else if (categorias !== 'todos'){
+        setProducts2(data)
+    }
+  }, [categorias,data]);
 
   const fetchData = React.useCallback(() => {
     fetch("https://api.mercadolibre.com/sites/MLU/search?seller_id=109907868")
@@ -37,12 +42,7 @@ export default function MinimumDistanceSlider() {
     } else {
       setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
     }
-    console.log('products2');
-    console.log(products2);
-  /*   console.log('filtro1');
-    console.log(filtro1);
-    console.log('filtro2');
-    console.log(filtro2); */
+
     const filtro1 = products2.filter((a) => a.price > value1[0]);
     const filtro2 = filtro1.filter((a) => a.price < value1[1]);
 
