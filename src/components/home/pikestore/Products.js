@@ -118,10 +118,12 @@ React.useEffect(() => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {products && products.length > 0 ? (
           products.map((a, index) => (
-            <div
-              className="px-5 py-4 hover:shadow-lg transition-all 1s ease-in rounded-lg cursor-pointer bg-white "
-              key={a.id}
-            >
+            <motion.div
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 + index / 10 }}
+            key={a.id} 
+            className="px-5 py-4 hover:shadow-lg transition-all 1s ease-in rounded-lg cursor-pointer bg-white ">
               <img
                 onClick={() => navigate(`/detalle/${a.id}`)}
                 src={img(a.thumbnail)}
@@ -146,7 +148,7 @@ React.useEffect(() => {
                   />
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))
         ) : (
           <div>

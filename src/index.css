@@ -3,15 +3,12 @@
 * {
   margin: 0;
   padding: 0;
- 
 }
 
 body {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -19,9 +16,9 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   right: 10px;
   padding: 10px;
-  color: #C297D3 !important;
-  fill: #C297D3 !important;
-  stroke: #C297D3 !important;
+  color: #c297d3 !important;
+  fill: #c297d3 !important;
+  stroke: #c297d3 !important;
 }
 
 /* .image-gallery-icon {
@@ -34,11 +31,14 @@ body {
 } */
 
 .image-gallery-image {
-  width: 100vw !important;
-  height: 80vh !important;
-/*   object-fit: cover !important;
- */  border-radius: 20px;
-  cursor: pointer
+  width: 50vw !important;
+  border-radius: 20px !important;
+  box-sizing: none !important;
+  margin-right: 10px;
+  height: 50vh !important;
+  object-fit: contain !important;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 /* ola */
@@ -47,40 +47,33 @@ body {
   width: 80% !important;
   height: 100% !important;
   margin: auto;
-
-
 }
 
 .image-gallery-thumbnail {
   border-radius: 10px;
   object-fit: cover !important;
-
 }
 
 .image-gallery-thumbnail-image {
   border-radius: 7px;
   object-fit: cover !important;
   height: 100px !important;
-
 }
 
 .image-gallery-thumbnail:hover {
   border: 3px solid #fff !important;
   opacity: 50%;
-
 }
 
 .active {
-  border: 3px solid #C297D3 !important
+  border: 3px solid black !important;
 }
 
 .MuiAccordionSummary-root {
   box-shadow: none !important;
   /* background-color: red !important; */
-  border: none !important
+  border: none !important;
 }
-
-
 
 .MuiSlider-thumb {
   color: black;
@@ -105,13 +98,12 @@ display:none
 
 .control-dots .dot {
   margin-bottom: 20px !important;
-  background-color: black !important
+  background-color: black !important;
 }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import "~react-image-gallery/styles/css/image-gallery.css";
-
 
 .secondary-img {
   opacity: 0.7;
@@ -120,8 +112,6 @@ display:none
 #hover-img {
   opacity: 1;
 }
-
-
 
 /* --------- */
 /*  Preloader */
@@ -149,7 +139,6 @@ display:none
   height: 100vh;
 }
 
-
 .fade-enter {
   opacity: 0;
 }
@@ -171,7 +160,6 @@ display:none
   transition: opacity 500ms;
 }
 
-
 @keyframes scroller {
   from {
     transform: translateX(100%);
@@ -187,5 +175,4 @@ display:none
   animation-name: scroller;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  
 }

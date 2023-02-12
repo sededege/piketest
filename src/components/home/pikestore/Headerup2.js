@@ -4,7 +4,7 @@ import { AiOutlineInfoCircle, AiOutlineWhatsApp,AiOutlineMail } from "react-icon
 
 const Headerup2 = () => {
   return (
-    <nav className="w-full flex mb-24 justify-end items-center px-20 bg-pike2 p-2">
+    <nav className="w-full flex mb-20 justify-end items-center px-20 bg-pike2 p-2">
       <div className="flex gap-4 text-[0.8rem]  ">
         <div className="flex items-center ">
           <AiOutlineInfoCircle className="text-pike" />
