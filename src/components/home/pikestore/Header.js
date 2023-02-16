@@ -7,7 +7,7 @@ import { actionType } from "../../context/reducer";
 
 const Header = () => {
   const [{ cartItems, cartShow }, dispatch] = useStateValue();
-  const [menu, setMenu] = React.useState("");
+  const [menu, setMenu] = React.useState("Inicio");
   const navigate = useNavigate();
   const showCart = () => {
     dispatch({
@@ -93,7 +93,7 @@ const Header = () => {
           {menunav.map((a) => (
             <li
               onClick={() => navegar(a.name)}
-              className={`${menu === a.name ? "text-pike" : "text-pike2"} `}
+              className={`${menu === a.name ? "text-pike font-bold" : "text-pike2 font-medium" } `}
             >
               {a.name}
             </li>

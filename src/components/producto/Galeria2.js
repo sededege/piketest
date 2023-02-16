@@ -12,7 +12,6 @@ const Galeria = (a) => {
                 setImages2("")
                 colorgaleria[0].images.forEach((el, index) => {
                     el != null && (setImages2(prevState => [...prevState, { original: el, thumbnail: el }]))
-
                 })
             } if (colorgaleria[0].video != "") {
                 colorgaleria[0].video.forEach((la, index) => {
