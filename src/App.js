@@ -121,7 +121,7 @@ function App() {
           <WhatsAppWidget
             className="z-[10000]"
             /* CompanyIcon={CompanyIcon} */
-            phoneNumber="+59898412760"
+            phoneNumber="+59899651873"
             sendButton="Enviar"
             message="Hola! 👋🏼 En que te podemos ayudar?"
             replyTimeText="Suele responder dentro de 2 horas"

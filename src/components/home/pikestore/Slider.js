@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import banner1 from "./assets/summer2.jpg";
 import {IoMdArrowDropleft,IoMdArrowDropright} from 'react-icons/io'
-import banner2 from './assets/1.png'
+import banner2 from './assets/2.png'
 const Slider = () => {
   return (
     <>
@@ -43,9 +43,9 @@ const Slider = () => {
           <button className="absolute bottom-20 left-[20%] bg-black text-white py-2 px-4 cursor-pointer rounded-lg">Ver productos</button>
           <img src={banner2} className=" rounded-lg object-contain"/>
         </div>
-        <div className=" md:h-full rounded-lg mb-4 cursor-pointer relative">
+       {/*  <div className=" md:h-full rounded-lg mb-4 cursor-pointer relative">
           <img src='https://images.sodimac.com/v3/assets/blt859cb831115f9ca8/blt33da8ac205c6242a/63dd19b4260a9a2054c6cd3c/Vhome-tiramoscasa-1.webp?auto=webp&disable=upscale&quality=70&width=1920' className=" rounded-lg object-contain"/>
-        </div>
+        </div> */}
        {/*  <div className="h-[120px] md:h-full rounded-lg mb-4 hover:opacity-70  cursor-pointer relative">
           <img src={banner1} className=" w-1/2 rounded-lg object-cover"/>
         </div> */}

@@ -249,7 +249,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col px-10 ">
+    <div className="flex flex-col px-20 ">
       <Popup />
       <Slider />
       <div className="px-[400px]">

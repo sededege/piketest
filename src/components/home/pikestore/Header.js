@@ -78,7 +78,7 @@ const Header = () => {
         scroll > 10
           ? "top-0  border-b-4 border-pike fixed "
           : "top-10 absolute "
-      } : w-full flex z-[100] bg-white justify-between items-center px-10 h-16 transition-all ease-in 2s`}
+      } : w-full flex z-[100] bg-white justify-between items-center px-20 h-16 transition-all ease-in 2s`}
     >
       {/*       <img src={logo} alt="logo" className="flex w-20" />
        */}{" "}
