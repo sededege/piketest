@@ -275,7 +275,7 @@ const Home = () => {
         <div className="flex p-4 box-border box-none font-bold text-white">
           Catálogo
         </div>
-        <div className="flex p-4 ">
+        <div className="flex p-4 hidden md:flex">
           <input
             className="w-[300px] p-2 bg-white rounded-l-md text-center shadow-md"
             type="text"
