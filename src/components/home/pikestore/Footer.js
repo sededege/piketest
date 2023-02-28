@@ -13,7 +13,9 @@ import {BiMailSend} from 'react-icons/bi'
 
 const Footer = () => {
   return (
-    <nav className="w-full flex justify-between items-center px-20 bg-pike2 p-2 py-10">
+    <>
+  {/*  Desktop */}
+   <footer className="w-full md:flex justify-between items-center px-20 bg-pike2 p-2 py-10 hidden">
      {/*  <div className="flex gap-4">
          <div className="flex items-center">
           <AiOutlineInfoCircle className="text-pike" />
@@ -71,7 +73,64 @@ const Footer = () => {
           </a>
         </div>
       </div>
-    </nav>
+    </footer>
+
+
+
+  {/* Mobile */}
+   <footer className="w-full md:hidden justify-between items-center px-8 bg-pike2 p-2 py-10 flex flex-col">
+     {/*  <div className="flex gap-4">
+         <div className="flex items-center">
+          <AiOutlineInfoCircle className="text-pike" />
+          <p className="text-white ml-2">
+            Retiros en Zona Reducto - Parque Posadas
+          </p>
+        </div> 
+       
+      </div> */}
+      <ul className="text-white flex flex-col gap-2">
+        <h1 className="font-bold ">Newsletter</h1>
+        <li className="hover:underline cursor-pointer">Suscribite y recibí todas nuestras novedades!</li>
+        <li className="hover:underline cursor-pointer">
+        <div className="flex ">
+          <input
+            className="w-full p-2 bg-white rounded-l-md text-center shadow-md"
+            type="text"
+            placeholder="Escribe tu email"
+          />
+          <BiMailSend className="bg-pike text-[2.5rem] p-1 text-white rounded-r-md cursor-pointer" />
+        </div>
+        </li>
+        <h1 className="font-bold mt-4 ">Retiros</h1>
+        <li>Zona Reducto</li>
+        <li>Parque Posadas</li>
+        <h1 className="font-bold  mt-4  ">Compra</h1>
+        <li className="hover:underline cursor-pointer">
+          Como comprar en nuestra web
+        </li>
+        <li className="hover:underline cursor-pointer">
+          Envíos y devoluciones
+        </li>
+        <li className="hover:underline cursor-pointer">Preguntas frecuentes</li>
+        <p className="text-white font-bold  mt-4 ">Seguinos</p>
+        <div className="flex gap-4 text-pike">
+          <a href="https://www.instagram.com/pikestore.uy/">
+            {" "}
+            <AiOutlineInstagram className="text-[2rem]" />
+          </a>
+          <a href="https://wa.me/+59899651873">
+            {" "}
+            <AiOutlineWhatsApp className="text-[2rem]" />
+          </a>
+          <a href="mailto:ventas@pikestore.com.uy">
+            {" "}
+            <AiOutlineMail className="text-[2rem]" />
+          </a>
+        </div>
+      </ul>
+    
+    </footer>
+    </>
   );
 };
 

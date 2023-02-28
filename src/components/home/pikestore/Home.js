@@ -102,13 +102,13 @@ const Home = () => {
   };
   const iconos2 = (e) => {
     if (e === "Pagá en cuotas!") {
-      return <AiFillCreditCard className="text-[3rem] text-gray-700" />;
+      return <AiFillCreditCard className="md:text-[3rem] text-[2rem] text-gray-700" />;
     }
     if (e === "Retira en el día") {
-      return <AiOutlineDropbox className="text-[3rem] text-gray-700" />;
+      return <AiOutlineDropbox className="md:text-[3rem] text-[2rem]  text-gray-700" />;
     }
     if (e === "Envíos a todo el país") {
-      return <FaTruck className="text-[3rem] text-gray-700" />;
+      return <FaTruck className="md:text-[3rem] text-[2rem] text-gray-700" />;
     }
     if (e === "Electrónica, Audio y Video") {
       return <BsFillMusicPlayerFill className="text-[3rem] text-gray-400" />;
@@ -249,10 +249,10 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col px-20 ">
-      <Popup />
+    <div className="flex flex-col md:px-20 px-4 ">
+      {/* <Popup /> */}
       <Slider />
-      <div className="px-[400px]">
+      <div className="md:px-[400px]">
         <ul className="flex gap-4  ">
           {banners &&
             banners.map((a) => (
@@ -260,17 +260,18 @@ const Home = () => {
                 onClick={() => cambiar(a)}
                 className={`${
                   select === a.name ? "bg-white" : " bg-white "
-                } :  py-4 w-full flex-col cursor-pointer rounded-lg hover:bg-white border-gray-100 gap-2 text-pike2 text-[0.8rem] justify-center flex text-center  items-center`}
+                } :  py-4 w-full flex-col cursor-pointer rounded-lg hover:bg-white border-gray-100 gap-2 text-pike2 text-[1rem] justify-center flex text-center  items-center`}
               >
                 {iconos2(a.name)}
-                <p className="text-pike font-bold">{a.name}</p>
-                <p className="text-gray-200">{a.name}</p>
+                <p className="text-pike font-semibold md:flex hidden">{a.name}</p>
+                <p className="text-pike font-bold text-[0.8rem] flex md:hidden">{a.name}</p>
+                <p className="text-gray-200 md:flex hidden">{a.name}</p>
               </li>
             ))}
         </ul>
       </div>
 
-      <div className="flex w-full items-center bg-pike2 rounded-t-lg justify-between mt-4">
+      <div className=" md:flex w-full items-center bg-pike2 rounded-t-lg justify-between mt-4">
         <div className="flex p-4 box-border box-none font-bold text-white">
           Catálogo
         </div>
@@ -282,13 +283,10 @@ const Home = () => {
           />
           <AiOutlineSearch className="bg-pike2 text-[2.5rem] p-1 text-white rounded-r-md cursor-pointer" />
         </div>
-        {/* <div className="text-white flex gap-2 p-4 items-center">
-          Envíos gratis a todo el país! <BsTruck/>
-        </div> */}
       </div>
 
-      <div className="flex h-full bg-gray-200">
-        <div className="w-1/4  rounded-bl-lg">
+      <div className=" md:flex h-full bg-gray-200">
+        <div className="w-1/4  rounded-bl-lg hidden md:block">
           <h2 className="font-bold mt-4 text-left p-4">Categorias</h2>
           <ul className="px-2 gap-2 flex flex-col">
             <li

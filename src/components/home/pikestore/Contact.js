@@ -29,7 +29,7 @@ export default function Contact() {
 
   return (
     <div>
-      <section className="text-gray-700 body-font relative">
+      <section className="text-gray-700 body-font relative md:pt-0 pt-[10vh]">
         <form type="POST" className="container px-5 py-10 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-pike">

@@ -98,12 +98,12 @@ const RightNav = React.memo(({
     setItems([...cartItems, itemselect]);
   };
   return (
-    <div className="w-[85vw] px-10 py-10 flex mx-auto">
+    <div className="md:w-[85vw] md:px-10 md:py-10 flex md:flex-row flex-col mx-auto pt-[10vh] md:pt-0">
       {/*  <img
           className=" w-[500px] h-[500px] items-center mx-auto object-contain"
           src={detalle && detalle.pictures[0].url}
         />  */}
-      <div className="flex w-full">
+      <div >
         <ImageGallery
           showPlayButton={false}
           sizes={400}
@@ -123,8 +123,8 @@ const RightNav = React.memo(({
         />
       </div>
 
-      <div className="w-full flex flex-col justify-between rounded-lg bg-gray-100 p-4 ">
-        <div>
+      <div className="w-full flex flex-col justify-between rounded-lg bg-gray-100 p-4   ">
+        <div >
           <h1 className="font-bold text-pike w-[300px] mx-auto text-center justify-center">
             {detalle && detalle.title}
           </h1>
@@ -132,12 +132,12 @@ const RightNav = React.memo(({
             Codigo: {detalle && detalle.attributes[1].value_name}
           </p>
         </div>
-        <p className="p-10 text-gray-400">{description}</p>
-        <div className="flex items-center justify-between px-10 gap-4">
-          <h2 className="text-[2rem] text-center justify-end">
+        <p className="p-10 text-gray-400 md:h-full h-[300px] overflow-y-auto p-0 md:p-4 mt-4 mb-4">{description}</p>
+        <div className="flex items-center justify-between px-10 gap-4 mt-4">
+          <h2 className="text-[2rem] text-center justify-end  ">
             $ {detalle && detalle.base_price}
           </h2>
-          <div className="flex  gap-2">
+          <div className="flex  gap-2 ">
             <div
               onClick={
                 cantidad > 1 ? () => setCantidad(cantidad - 1) : undefined
@@ -158,12 +158,19 @@ const RightNav = React.memo(({
           </div>
           <button
             type="submit"
-            className=" text-white bg-pike2 border-2 border-white hover:border-2 hover:border-pike2  py-2 px-8 focus:outline-none hover:bg-white hover:text-pike2 rounded-lg text-lg"
+            className="hidden md:flex text-white bg-pike2 border-2 border-white hover:border-2 hover:border-pike2  py-2 px-8 focus:outline-none hover:bg-white hover:text-pike2 rounded-lg text-lg"
          onClick={() => pedido(detalle)}
          >
             Añadir al carrito
           </button>
         </div>
+        <button
+            type="submit"
+            className="md:hidden flex mb-4 text-white justify-center bg-pike2 border-2 border-white hover:border-2 hover:border-pike2  py-2 px-8 focus:outline-none hover:bg-white hover:text-pike2 rounded-lg text-lg"
+         onClick={() => pedido(detalle)}
+         >
+            Añadir al carrito
+          </button>
       </div>
     </div>
   );

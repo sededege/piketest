@@ -24,7 +24,7 @@ const Products = ({ products, currentPage, postsPerPage, setCurrentPage }) => {
     fetch(`https://api.mercadolibre.com/items?ids=${id}`)
       .then((response) => response.json())
       .then((data) => {
-        if (images.length === 0) {
+        if (data && images.length === 0) {
           setImages((prev) => [...prev, data[0].body.pictures[0].url]);
         }
       });
@@ -121,16 +121,16 @@ React.useEffect(() => {
             <motion.div
             initial={{ opacity: 0}}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 + index / 10 }}
+            transition={{delay: 0.3 + index / 10}}
             key={a.id} 
-            className="px-5 py-4 hover:shadow-lg transition-all 1s ease-in rounded-lg cursor-pointer bg-white ">
+            className="md:px-5 px-2 py-4 hover:shadow-lg transition-all 1s ease-in rounded-lg cursor-pointer bg-white ">
               <img
                 onClick={() => navigate(`/detalle/${a.id}`)}
                 src={img(a.thumbnail)}
-                className="h-[300px] object-contain w-full "
+                className="h-[200px] md:h-[300px] object-contain w-full "
               />
 
-              <h2 className="text-[0.8rem] py-2 h-[70px] text-gray-500 text-center">
+              <h2 className="text-[0.8rem] py-2 h-[120px] md:h-[70px] text-gray-500 text-center">
                 {a.title}
               </h2>
               <div className="flex justify-between relative">

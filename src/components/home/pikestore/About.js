@@ -10,9 +10,9 @@ const About = () => {
     );
   };
   return (
-    <div className="w-full px-[25vw] text-center text-gray-500  flex flex-col justify-between gap-4 pb-20">
+    <div className="w-full md:pt-0 pt-[10vh] md:px-[25vw] px-8 text-center text-gray-500  flex flex-col justify-between gap-4 pb-20">
       <img className="w-[300px] mx-auto" src={logo} alt="logo" />
-      <div className="flex gap-4">
+      <div className="flex md:flex-row flex-col gap-4">
         <Card
           title="Quienes somos"
           text="Somos una empresa familiar de e-commerce que apunta a brindar

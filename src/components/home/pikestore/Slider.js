@@ -19,7 +19,7 @@ const Slider = () => {
             <div
               className={`${
                 hasPrev ? "absolute" : "hidden"
-              } top-0 bottom-0 left-0 flex justify-center items-center  p-3 hover:opacity-80 cursor-pointer z-20`}
+              } md:top-0 top-[10vh] bottom-0 left-0 flex justify-center items-center  p-3 hover:opacity-80 cursor-pointer z-20`}
               onClick={clickHandler}
             >
               <IoMdArrowDropleft className="w-9 h-9 text-white fill-black" />
@@ -31,7 +31,7 @@ const Slider = () => {
             <div
               className={`${
                 hasNext ? "absolute" : "hidden"
-              } top-0 bottom-0 right-0 flex justify-center items-center  p-3 hover:opacity-80 cursor-pointer z-20`}
+              } md:top-0 top-[10vh] bottom-0 right-0 flex justify-center items-center  md:p-3 hover:opacity-80 cursor-pointer z-20`}
               onClick={clickHandler}
             >
               <IoMdArrowDropright className="w-9 h-9  fill-black" />
@@ -39,9 +39,13 @@ const Slider = () => {
           );
         }}
       >
-        <div className=" md:h-full rounded-lg mb-4 cursor-pointer relative">
-          <button className="absolute bottom-20 left-[20%] bg-black text-white py-2 px-4 cursor-pointer rounded-lg">Ver productos</button>
-          <img src={banner2} className=" rounded-lg object-contain"/>
+        <div className="  md:h-full rounded-lg mb-4 cursor-pointer relative pt-[10vh] md:pt-0">
+{/*           <button className="absolute bottom-20 left-[20%] bg-black text-white py-2 px-4 cursor-pointer rounded-lg">Ver productos</button>
+ */}          <img src={banner2} className="h-[200px] md:h-full rounded-lg object-cover md:object-contain"/>
+        </div>
+        <div className="  md:h-full rounded-lg mb-4 cursor-pointer relative pt-[10vh] md:pt-0">
+{/*           <button className="absolute bottom-20 left-[20%] bg-black text-white py-2 px-4 cursor-pointer rounded-lg">Ver productos</button>
+ */}          <img src={banner2} className="h-[200px] md:h-full rounded-lg object-cover md:object-contain"/>
         </div>
       </Carousel>
     </>
