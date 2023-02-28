@@ -4,18 +4,16 @@ import Slider from "./Slider";
 import Range from "./Range";
 import Pagination from "./Pagination";
 import { IoIosConstruct } from "react-icons/io";
-import { AiFillHome, AiOutlineSearch, AiOutlineFilter } from "react-icons/ai";
+import { AiFillHome, AiOutlineSearch, AiOutlineFilter,AiFillCreditCard,AiOutlineDropbox } from "react-icons/ai";
 import { GiFactory, GiClothes, GiCoinsPile } from "react-icons/gi";
 import { BsFillMusicPlayerFill, BsTruck } from "react-icons/bs";
-import { FaBaby } from "react-icons/fa";
+import { FaBaby, FaTruck} from "react-icons/fa";
 import { useStateValue } from "../../context/StateProvider";
 import { actionType } from "../../context/reducer";
 import { useLocation } from "react-router";
 import banner from "./assets/banner2.jpg";
 
 const Home = () => {
-  /*   const [products, setProducts] = React.useState();
-   */
   const [{ products }, dispatch] = useStateValue();
   const [categories, setCategories] = React.useState();
   const [categories2, setCategories2] = React.useState();
@@ -30,6 +28,7 @@ const Home = () => {
   const location = useLocation();
   const state = location.state;
   const [showModal, setShowModal] = React.useState(false);
+  const [first, setfirst] = useState(0);
 
   const banners = [
     {
@@ -44,10 +43,6 @@ const Home = () => {
       id: 2,
       name: "Retira en el día",
     },
-    /*  {
-      id: 3,
-      name: "Contacto",
-    }, */
   ];
   React.useEffect(() => {
     fetch("https://api.mercadolibre.com/sites/MLU/search?seller_id=109907868")
@@ -78,7 +73,9 @@ const Home = () => {
 
     setSelect("todos");
 
-    setTimeout(() => {
+    
+
+    state !== "catalogo" &&  setTimeout(() => {
       setShowModal(true);
     }, 3000);
   }, [state]);
@@ -105,13 +102,13 @@ const Home = () => {
   };
   const iconos2 = (e) => {
     if (e === "Pagá en cuotas!") {
-      return <GiFactory className="text-[3rem] text-gray-700" />;
+      return <AiFillCreditCard className="text-[3rem] text-gray-700" />;
     }
     if (e === "Retira en el día") {
-      return <IoIosConstruct className="text-[3rem] text-gray-700" />;
+      return <AiOutlineDropbox className="text-[3rem] text-gray-700" />;
     }
     if (e === "Envíos a todo el país") {
-      return <GiClothes className="text-[3rem] text-gray-700" />;
+      return <FaTruck className="text-[3rem] text-gray-700" />;
     }
     if (e === "Electrónica, Audio y Video") {
       return <BsFillMusicPlayerFill className="text-[3rem] text-gray-400" />;
@@ -159,7 +156,7 @@ const Home = () => {
                             for="name"
                             className="leading-7 text-sm text-gray-600"
                           >
-                           Empresa (*)
+                            Empresa (*)
                           </label>
                           <input
                             type="text"
@@ -204,7 +201,6 @@ const Home = () => {
                           />
                         </div>
                       </div>
-                     
                     </form>
                   </div>
                   <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">

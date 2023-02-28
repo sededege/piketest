@@ -57,19 +57,15 @@ const Footer = () => {
       <div className="flex flex-col gap-4 bottom-6 relative">
         <p className="text-white font-bold">Seguinos</p>
         <div className="flex gap-4 text-pike">
-          <a href="https://www.linkedin.com/in/sebagtech/">
-            {" "}
-            <AiFillLinkedin className="text-[2rem] " />
-          </a>
-          <a href="http://sebag.tech">
+          <a href="https://www.instagram.com/pikestore.uy/">
             {" "}
             <AiOutlineInstagram className="text-[2rem]" />
           </a>
-          <a href="https://wa.me/+59898412760">
+          <a href="https://wa.me/+59899651873">
             {" "}
             <AiOutlineWhatsApp className="text-[2rem]" />
           </a>
-          <a href="mailto:sebagonzalez_97@hotmail.com">
+          <a href="mailto:ventas@pikestore.com.uy">
             {" "}
             <AiOutlineMail className="text-[2rem]" />
           </a>

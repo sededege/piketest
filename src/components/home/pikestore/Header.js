@@ -63,7 +63,7 @@ const Header = () => {
       navigate("/", { state: "inicio" });
     } 
     if (a === 'Catálogo') {
-      navigate("/", { state: "catalogo" });
+      navigate("/catalogo", { state: "catalogo" });
     } 
     if (a === 'Sobre Nosotros') {
       navigate("/SobreNosotros");

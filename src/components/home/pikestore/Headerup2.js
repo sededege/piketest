@@ -16,7 +16,7 @@ const Headerup2 = () => {
         <div className="flex items-center">
           <AiOutlineWhatsApp className="text-pike" />
 
-          <p className="text-white ml-2">+59898412760</p>
+          <p className="text-white ml-2">+598 99 651 873</p>
         </div>
         <div className="flex items-center">
           <AiOutlineMail className="text-pike" />
