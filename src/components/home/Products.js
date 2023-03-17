@@ -100,10 +100,10 @@ const Products = (props) => {
                                         {
                                             a.oferta != 0 ? <div className='flex gap-2 items-center'>
                                                 <p className='text-[1.4rem] md:text-[1.2rem] text-black font-semibold'>$ {Math.round((a.precio * (100 - (a.oferta))) / 100)}</p>
-                                                <p className='text-[1rem] text-gray-400 line-through		'>$ {a.precio}</p>
+                                                <p className='text-[1rem] text-gray-400 line-through		'>$ {Math.round(a.precio)}</p>
 
                                             </div>
-                                                : <p className='text-[1.2rem] font-semibold text-black'>$ {a.precio}</p>
+                                                : <p className='text-[1.2rem] font-semibold text-black'>$ {Math.round(a.precio)}</p>
 
                                         }
                                         {/*                                         <MdArrowForwardIos className='text-[2rem] text-booty bg-bghome p-2 rounded-full ' />

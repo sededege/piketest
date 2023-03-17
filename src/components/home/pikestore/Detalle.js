@@ -135,7 +135,7 @@ const RightNav = React.memo(({
         <p className="p-10 text-gray-400 md:h-full h-[300px] overflow-y-auto p-0 md:p-4 mt-4 mb-4">{description}</p>
         <div className="flex items-center justify-between px-10 gap-4 mt-4">
           <h2 className="text-[2rem] text-center justify-end  ">
-            $ {detalle && detalle.base_price}
+            $ {detalle && Math.round(detalle.base_price)}
           </h2>
           <div className="flex  gap-2 ">
             <div

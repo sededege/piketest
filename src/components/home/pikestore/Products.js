@@ -135,7 +135,7 @@ React.useEffect(() => {
               </h2>
               <div className="flex justify-between relative">
                 <p className="font-semibold text-pike2 text-[1.3rem] ">
-                  $ {a.price}
+                  $ {Math.round(a.price)}
                 </p>
 
                 <motion.div

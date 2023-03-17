@@ -1,6 +1,10 @@
 import React from "react";
 import logo from "./assets/logo.jpg";
-import { AiOutlineInfoCircle, AiOutlineWhatsApp,AiOutlineMail } from "react-icons/ai";
+import {
+  AiOutlineInfoCircle,
+  AiOutlineWhatsApp,
+  AiOutlineMail,
+} from "react-icons/ai";
 
 const Headerup2 = () => {
   return (
@@ -10,7 +14,7 @@ const Headerup2 = () => {
           <AiOutlineInfoCircle className="text-pike" />
 
           <p className="text-white ml-2 ">
-            Horarios de Lunes a Viernes - 9 a 17 hs / Sábados 8 A 12 hs
+            Horarios de Lunes a Viernes - 9 a 18 hs / Sábados 9 A 13 hs
           </p>
         </div>
         <div className="flex items-center">
